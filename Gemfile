@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+#default
 gem 'rails', '4.1.8'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
@@ -14,5 +14,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 
-#paperclip gem
+#added
 gem 'paperclip', '~> 4.2.1'
+
