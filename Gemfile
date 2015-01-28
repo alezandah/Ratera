@@ -16,4 +16,4 @@ gem 'spring',        group: :development
 
 #added
 gem 'paperclip', '~> 4.2.1'
-
+gem 'twitter-bootstrap-rails', '~> 3.2.0'
