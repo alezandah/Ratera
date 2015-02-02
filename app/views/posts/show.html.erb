@@ -1,6 +1,10 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
 
+<h2>
+<div class="star-rating" data-score= <%= @avg_review %> ></div>
+<em><%= "#{@reviews.length} reviews" %></em>
+</h2>
 
 <% if @reviews.blank? %>
     <h3>No reviews just yet, would you like to add the first!</h3>
@@ -8,10 +12,22 @@
 <% else %>
     <% @reviews.each do |review| %>
         <div class="reviews">
-          <p><%= review.rating %></p>
+          <div class="star-rating" data-score= <%= review.rating %> ></div>
           <p><%= review.comment %></p>
         </div>
     <% end %>
 <% end %>
 
 <%= link_to "Write Review", new_post_review_path(@post), class: "btn btn-danger" %>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', post_path %>
+
+<script>
+    $('.star-rating').raty({
+        path: '/assets/',
+        readOnly: true,
+        score: function() {
+            return $(this).attr('data-score');
+        }
+    });
+</script>
