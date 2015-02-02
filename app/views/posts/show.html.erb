@@ -1,2 +1,17 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
+
+
+<% if @reviews.blank? %>
+    <h3>No reviews just yet, would you like to add the first!</h3>
+    <%= link_to "Write Review", new_post_review_path(@post), class: "btn btn-danger" %>
+<% else %>
+    <% @reviews.each do |review| %>
+        <div class="reviews">
+          <p><%= review.rating %></p>
+          <p><%= review.comment %></p>
+        </div>
+    <% end %>
+<% end %>
+
+<%= link_to "Write Review", new_post_review_path(@post), class: "btn btn-danger" %>

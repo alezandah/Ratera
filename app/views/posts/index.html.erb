@@ -1,7 +1,7 @@
 <h1>LIST OF PICTURES</h1>
 <div class="">
 	<% @posts.each do |post| %>
-		<%= post.caption %>
-		<%= image_tag post.picture.url %>
+		<%= post.caption %><br>
+      <%= link_to (image_tag post.picture.url(:medium) ), post %>
 	<% end %>
 </div>
